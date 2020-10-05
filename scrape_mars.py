@@ -13,7 +13,7 @@ def init_browser():
 
 def scrape_info():
     browser = init_browser()
-    mars_dict={}
+    mars_data={}
     #visit web page 
     url = "'https://mars.nasa.gov/news/'"
     browser.visit(url)
@@ -43,7 +43,7 @@ def scrape_info():
     path=soup.select_one('figure.lede a img').get("src")
     featured_image_url= site_url + path
 
-    mars_dict['featured_image_url']=featured_image_url
+    # mars_dict['featured_image_url']=featured_image_url
 
 #  
 
@@ -89,11 +89,12 @@ def scrape_info():
         image_urls.append(image_dict)
 
     # # Store data in a dictionary
-    mars_dict = {
+    mars_data = {
         "news_title": news_title,
         "news_p":news_p,
         "featured_image_url":featured_image_url,
         "mars_table":mars_table,
         "hem_images": image_urls
     }
-    return mars_dict
+
+    return mars_data
