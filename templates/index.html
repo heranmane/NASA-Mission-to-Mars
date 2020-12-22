@@ -26,8 +26,32 @@
                 <img src="{{ mars.featured_image_url }}" alt="Images">
             </div>
         </div>
-
-    </div>
+        <div class="row">
+            <div class="col-md-8">
+                <h2> Featured Mars Images</h2>
+                <p>{{mars.news_p}}</p>
+                <img src="{{ mars.featured_image_url }}" alt="Mars Images">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2> Mars Facts</h2>
+                {{mars.mars_table | safe}}
+            </div>
+        </div>
+        <div>
+            <!-- write a for loop that lists out your data and accesses the values using dot notation. -->
+            {% for item in mars.image_urls %}
+            <div class="col-lg-4">
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body">
+                        <img src="{{ mars.image_dict }}">
+                        <p>{{mars.title}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
 </body>
 
 </html>

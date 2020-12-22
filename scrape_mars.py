@@ -63,7 +63,7 @@ def scrape_info():
     html = browser.html
     # Parse HTML with Beautiful Soup
     soup = BeautifulSoup(html, 'html.parser')
-    # Retrieve all elements that contain book information
+    # Retrieve all elements that contain  information
     hems=soup.find('div',class_='collapsible results')
     articles = soup.find_all('div', class_='item')
 
